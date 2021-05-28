@@ -2777,12 +2777,13 @@ html.no-csstransitions .home-content__main {
     outline: none;
 }
 .headshot {
-    width: 20rem;
-    height: 20rem;
+    clear: both;
+    width: 15em;
+    height: 15em;
     box-shadow: 0 0 0 0.9rem rgba(255, 255, 255, 0.1);
     border-radius: 100%;
     position: relative;
-    left: 0rem;
+    left: -1rem;
     top: 0rem;
     bottom: 15rem;
     outline: none;
