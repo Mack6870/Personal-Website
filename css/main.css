@@ -756,7 +756,7 @@ label > input[type="checkbox"], label > input[type="radio"] {
  * ------------------------------------------------------------------- */
 
 input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus input:-webkit-autofill, textarea:-webkit-autofill, textarea:-webkit-autofill:hover textarea:-webkit-autofill:focus, select:-webkit-autofill, select:-webkit-autofill:hover, select:-webkit-autofill:focus {
-    -webkit-text-fill-color: #cf3e3e;
+    -webkit-text-fill-color: #FFFFFF;
     transition: background-color 5000s ease-in-out 0s;
 }
 
@@ -1255,7 +1255,9 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 .narrow {
     max-width: 800px;
 }
-
+.narrow2 {
+    max-width: 400px;
+}
 
 /* -------------------------------------------------------------------
  * ## section intro - (_common-styles.scss)
@@ -3054,7 +3056,7 @@ html.no-csstransitions .home-content__main {
 
 .s-contact {
     background-color: #151515;
-    background-image: url("../images/contact-bg.jpg");
+    background-image: url("../images/hero-bg5.jpg");
     background-repeat: no-repeat;
     background-position: center, center;
     padding-top: 13.2rem;
