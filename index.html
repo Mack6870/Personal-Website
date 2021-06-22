@@ -766,45 +766,48 @@
 
         <div class="row contact__main">
             <div class="col-eight tab-full contact__form">
-                <form name="contactForm" id="contactForm" method="POST" action="https://formsubmit.co/mackenziefurlong@hotmail.com" autocomplete="on">
+                <form name="contactForm" id="contactForm" action="https://formspree.io/f/moqywogn" method="POST" autocomplete="on">
                     <fieldset>
-
-                    <div class="form-field">
-                        <input name="name" type="text" id="contactName" placeholder="Name" value="" minlength="2" required="" aria-required="true" class="full-width">
-                    </div>
-                    <div class="form-field">
-                        <input type="email" name="email" type="email" id="contactEmail" placeholder="Your Email" value="" required="" aria-required="true" class="full-width">
-                    </div>
-                    <div class="form-field">
-                        <input name="subject" type="text" id="contactSubject" placeholder="Subject" value="" class="full-width">
-                    </div>
-                    <div class="form-field">
-                        <textarea name="message" id="contactMessage" placeholder="Message" rows="10" cols="50" required="" aria-required="true" class="full-width"></textarea>
-                    </div>
-                    <div class="form-field">
-                        <button type="submit" class="full-width btn--primary">Submit</button>
-                        <div class="submit-loader">
-                            <div class="text-loader">Sending...</div>
-                            <div class="s-loader">
-                                <div class="bounce1"></div>
-                                <div class="bounce2"></div>
-                                <div class="bounce3"></div>
-                            </div>
-                        </div>
-                    </div>
-
+                      <input type="hidden" name="_subject" id="email-subject" value="Contact Form Submission">
+                      <input type="hidden" name="_template" value="box">
+                      <div class="form-field">
+                        <input type="text" name="_honey" style="display:none">
+                      </div>
+                      <div class="form-field">
+                          <input name="name" type="text" id="contactName" placeholder="Name" value="" minlength="2" required="" aria-required="true" class="full-width">
+                      </div>
+                      <div class="form-field">
+                          <input type="email" name="_replyto" id="contactEmail" placeholder="Your Email" value="" required="" aria-required="true" class="full-width">
+                      </div>
+                      <div class="form-field">
+                          <input name="subject" type="text" id="contactSubject" placeholder="Subject" value="" required="" class="full-width">
+                      </div>
+                      <div class="form-field">
+                          <textarea style="margin-bottom:0px;" name="message" id="contactMessage" placeholder="Message" rows="6" cols="50" required="" aria-required="true" class="full-width"></textarea>
+                      </div>
+                      <div class="form-field">
+                          <button style="margin-top:15px;" type="submit" value="Submit" class="full-width btn--primary">Submit</button>
+                          <div class="submit-loader">
+                              <div class="text-loader">Sending...</div>
+                              <div class="s-loader">
+                                  <div class="bounce1"></div>
+                                  <div class="bounce2"></div>
+                                  <div class="bounce3"></div>
+                              </div>
+                          </div>
+                      </div>
                     </fieldset>
                 </form>
 
                 <!-- contact-warning -->
-                <div class="message-warning">
+                <!-- <div class="message-warning">
                     Something went wrong. Please try again.
-                </div>
+                </div> -->
 
                 <!-- contact-success -->
-                <div class="message-success">
+                <!-- <div class="message-success">
                     Your message was sent, thank you!<br>
-                </div>
+                </div> -->
 
             </div>
             <div class="col-four tab-full contact__infos">
