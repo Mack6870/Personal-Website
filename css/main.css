@@ -3065,7 +3065,27 @@ html.no-csstransitions .home-content__main {
     position: relative;
 }
 
+.thanks-page {
+  background-color: #151515;
+  background-image: url("../Images/hero-bg6.jpg");
+  background-repeat: no-repeat;
+  background-position: center, center;
+  padding-top: 13.2rem;
+  padding-bottom: 12rem;
+  color: rgba(255, 255, 255, 0.5);
+  position: relative;
+}
+
 .s-contact .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: .75;
+    background-color: #070606;
+}
+.thanks-page .overlay {
     position: absolute;
     top: 0;
     left: 0;
