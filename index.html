@@ -1,657 +1,451 @@
 <!DOCTYPE html>
-<!--[if lt IE 9 ]><html class="no-js oldie" lang="en"> <![endif]-->
-<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!-->
-<html class="no-js" lang="en">
-<!--<![endif]-->
+<html lang="en">
 
 <head>
-
-    <!--- basic page needs
-    ================================================== -->
     <meta charset="utf-8">
-    <title>Mackenzie Furlong</title>
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <!-- mobile specific metas
-    ================================================== -->
+    <title>Mackenzie Furlong | Full-Stack Developer</title>
+    <meta name="description" content="Mackenzie Furlong — Full-Stack Developer with 5+ years building scalable cloud-based web applications. Based in Toronto, Ontario.">
+    <meta name="author" content="Mackenzie Furlong">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- CSS
-    ================================================== -->
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/vendor.css">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Mackenzie Furlong | Full-Stack Developer">
+    <meta property="og:description" content="Full-Stack Developer with 5+ years building scalable cloud-based web applications.">
+    <meta property="og:type" content="website">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="css/main.css">
 
-    <!-- script
-    ================================================== -->
-    <script src="js/modernizr.js"></script>
-    <script src="js/pace.min.js"></script>
-
-
-    <!-- favicons
-    ================================================== -->
+    <!-- Favicons -->
     <link rel="shortcut icon" href="Images/M-Logo.png" type="image/png">
     <link rel="icon" href="Images/M-Logo.png" type="image/png">
-
 </head>
 
 <body id="top">
 
-    <!-- header
-    ================================================== -->
-    <header class="s-header">
-
-        <div class="header-logo">
-            <a class="site-logo smoothscroll"style="padding-top: 10px; width: 15%; height: 15%;" href="#home"><img src="Images/M-Logo-White.png" alt="Homepage"></a>
+    <!-- Header -->
+    <header class="site-header" id="header">
+        <div class="header-inner">
+            <a class="header-logo" href="#hero">
+                <img src="Images/M-Logo-White.png" alt="MF" class="logo-img">
+            </a>
+            <nav class="header-nav" id="headerNav">
+                <ul class="nav-list">
+                    <li><a href="#hero" class="nav-link active">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#experience" class="nav-link">Experience</a></li>
+                    <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
-
-        <nav class="header-nav-wrap">
-            <ul class="header-nav">
-                <li class="current"><a class="smoothscroll"  href="#home" title="home">Home</a></li>
-                <li><a class="smoothscroll"  href="#about" title="about">About</a></li>
-                <li><a class="smoothscroll"  href="#works" title="works">Portfolio</a></li>
-                <li><a class="smoothscroll"  href="#contact" title="contact">Contact</a></li>
-            </ul>
-        </nav>
-
-        <a class="header-menu-toggle" href="#0"><span>Menu</span></a>
-
-    </header> <!-- end s-header -->
+    </header>
 
 
-   <!-- home
-   ================================================== -->
-   <!-- <section id="home" class="s-home page-hero target-section" data-parallax="scroll" data-image-src="Images/hero-bg4.jpg" data-natural-width=3893 data-natural-height=2494 data-position-y=center> -->
-   <!-- <section id="home" class="s-home page-hero target-section" data-parallax="scroll" data-image-src="Images/hero-bg5.jpg" data-natural-width=2400 data-natural-height=1600 data-position-y=center> -->
-   <!-- <section id="home" class="s-home page-hero target-section" data-parallax="scroll" data-image-src="Images/hero-bg6.jpg" data-natural-width=2400 data-natural-height=1600 data-position-y=center> -->
-   <section id="home" class="s-home page-hero target-section" data-parallax="scroll" data-image-src="Images/testimonial-bg.jpg" data-natural-width=3000 data-natural-height=1200 data-position-y=center>
-
-        <div class="overlay"></div>
-        <div class="shadow-overlay"></div>
-
-        <div class="home-content">
-
-            <div class="row home-content__main">
-
-                <h3>Hello There...</h3>
-
-                <h1>
-                    My name is <br>
-                    Mackenzie Furlong. <br>
-                    I am a software developer <br>
-                    based in Toronto, Ontario.
-                </h1>
-
-                <div class="home-content__buttons">
-                    <img src="Images/Headshot.jpg" alt="Headshot" class="headshot">
-                    <a href="#about" class="smoothscroll btn btn--stroke">
-                        About Me
+    <!-- Hero -->
+    <section id="hero" class="hero">
+        <div class="hero-bg"></div>
+        <div class="container hero-content">
+            <div class="hero-text">
+                <p class="hero-greeting fade-up">Hello, I'm</p>
+                <h1 class="hero-name fade-up delay-1">Mackenzie Furlong</h1>
+                <p class="hero-tagline fade-up delay-2">Full-Stack Developer</p>
+                <p class="hero-description fade-up delay-3">
+                    Building scalable, cloud-based web applications with 5+ years of professional experience.
+                    Based in Toronto, Ontario.
+                </p>
+                <div class="hero-actions fade-up delay-4">
+                    <a href="#about" class="btn btn-primary">About Me</a>
+                    <a href="#portfolio" class="btn btn-outline">View Projects</a>
+                </div>
+                <div class="hero-social fade-up delay-4">
+                    <a href="https://www.linkedin.com/in/mackenzie-furlong/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
                     </a>
-                    <a href="#works" class="smoothscroll btn btn--stroke">
-                        Projects
+                    <a href="https://github.com/Mack6870" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image fade-up delay-2">
+                <div class="hero-image-wrapper">
+                    <img src="Images/Headshot.jpg" alt="Mackenzie Furlong" loading="eager">
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <a href="#about" aria-label="Scroll down">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 13l5 5 5-5M7 6l5 5 5-5"/></svg>
+            </a>
+        </div>
+    </section>
+
+
+    <!-- About -->
+    <section id="about" class="section section-light">
+        <div class="container">
+            <div class="section-header reveal">
+                <p class="section-label">About</p>
+                <h2 class="section-title">A Little About Me</h2>
+            </div>
+
+            <div class="about-grid reveal">
+                <div class="about-text">
+                    <p>
+                        I am a Full Stack Developer with 5+ years of experience building scalable, cloud-based web applications.
+                        I have a strong background in C#, modern JavaScript frameworks (React &amp; Lit), and AWS. I specialize
+                        in developing enterprise-level platforms serving large user bases with a proven ability to collaborate
+                        across teams to deliver high-quality, maintainable solutions.
+                    </p>
+                    <p>
+                        I am a graduate of Queen's University with a specialization in Software Design and a cumulative GPA of 3.7. 
+                        I am knowledgeable in many popular programming languages and have a constant desire to keep learning new 
+                        technologies. I consider myself a strong problem solver who pays close attention to detail and am committed 
+                        to writing clean, efficient code.
+                    </p>
+                    <a href="Files/Mackenzie Furlong's Resume.pdf" target="_blank" class="btn btn-primary" download="Mackenzie_Furlong_Resume.pdf">
+                        Download Resume
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
                     </a>
                 </div>
 
-                <!-- <div class="home-content__scroll">
-                    <a href="#about" class="scroll-link smoothscroll">
-                        <span>Scroll Down</span>
-                    </a>
-                </div> -->
-
-            </div>
-
-        </div> <!-- end home-content -->
-
-        <ul class="home-social">
-            <li>
-                <a href="https://www.linkedin.com/in/mackenzie-furlong/" target="_blank"><i class="im im-linkedin" aria-hidden="true"></i><span>LinkedIn</span></a>
-            </li>
-            <li>
-                <a href="https://github.com/Mack6870" target="_blank"><i class="im im-github" aria-hidden="true"></i><span>GitHub</span></a>
-            </li>
-        </ul>
-        <!-- end home-social -->
-
-    </section> <!-- end s-home -->
-
-
-    <!-- about
-    ================================================== -->
-    <section id="about" style="padding-top:100px;" class="s-about target-section">
-
-        <div class="row narrow section-intro has-bottom-sep">
-            <div class="col-full text-center">
-                <h3 style="font-size: 3rem; line-height: 1.3; margin-bottom: 2rem;">About</h3>
-                <h1>A Little About Me...</h1>
-                <p class="lead">I am a Full Stack Developer with 5+ years of experience building scalable, cloud-based web applications. I have a strong background in C#, modern JavaScript frameworks (React & Lit), and AWS. I specialize in developing enterprise-level platforms serving large user bases with a proven ability to collaborate across teams to deliver high-quality, maintainable solutions.</p>
+                <div class="about-skills">
+                    <h3>Tech Stack</h3>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h4>Languages</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">C#</span>
+                                <span class="skill-tag">JavaScript</span>
+                                <span class="skill-tag">TypeScript</span>
+                                <span class="skill-tag">SQL</span>
+                                <span class="skill-tag">HTML/CSS</span>
+                                <span class="skill-tag">Java</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Frameworks</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">React</span>
+                                <span class="skill-tag">Lit</span>
+                                <span class="skill-tag">Node.js</span>
+                                <span class="skill-tag">Express</span>
+                                <span class="skill-tag">.NET</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Cloud &amp; Tools</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">AWS</span>
+                                <span class="skill-tag">MongoDB</span>
+                                <span class="skill-tag">Git</span>
+                                <span class="skill-tag">REST APIs</span>
+                                <span class="skill-tag">CI/CD</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+    </section>
 
-        <div class="row about-content">
-
-            <div class="col-six tab-full left">
-
-                <h3>Bio...</h3>
-
-                <p>
-                  I am a Full Stack Developer with 5+ years of experience building scalable, cloud-based web applications. I have a strong background in C#, modern JavaScript frameworks (React & Lit), and AWS. I specialize in developing enterprise-level platforms serving large user bases and have a proven ability to collaborate across teams to deliver high-quality, maintainable solutions.
-                </p>
-
-                <p>
-                  I am a graduate of Queen's University with a specialization in Software Design and a cumulative GPA of 3.7. I am knowledgeable in many popular programming languages and have a constant desire to keep learning new technologies. I consider myself a strong problem solver who pays close attention to detail and am committed to writing clean, efficient code.
-                </p>
-
+    <!-- Experience -->
+    <section id="experience" class="section section-dark">
+        <div class="container">
+            <div class="section-header reveal">
+                <p class="section-label">Experience</p>
+                <h2 class="section-title">Where I've Worked</h2>
             </div>
 
-            <div class="col-six tab-full right">
-                <h3>My Skills...</h3>
-
-                <ul class="skill-bars">
-                    <li>
-                    <div class="progress percent100"><span>100%</span></div>
-                    <strong>Full-Stack Development</strong>
-                    </li>
-                    <li>
-                    <div class="progress percent95"><span>95%</span></div>
-                    <strong>C#</strong>
-                    </li>
-                    <li>
-                    <div class="progress percent95"><span>95%</span></div>
-                    <strong>JavaScript</strong>
-                    </li>
-                    <li>
-                    <div class="progress percent95"><span>95%</span></div>
-                    <strong>SQL</strong>
-                    </li>
-                    <li>
-                    <div class="progress percent90"><span>90%</span></div>
-                    <strong>AWS</strong>
-                    </li>
-                </ul>
-            </div>
-
-        </div> <!-- end about-content -->
-
-        <div style="margin-bottom:0px;" class="row narrow2 about-content about-content--buttons section-intro has-bottom-sep">
-
-            <!-- <div class="col-six tab-full left"> -->
-                <a href="Files/Mackenzie Furlong's Resume.pdf" style="margin-bottom:25px" target="_blank" class="btn btn--primary full-width" download="Mackenzie_Furlong's_Resume.pdf">Download My Resume</a>
-            <!-- </div> -->
-            <!-- <div class="col-six tab-full right">
-                <a href="#0" class="btn full-width">Hire Me Now</a>
-            </div> -->
-
-        </div> <!-- end about-content buttons -->
-
-        <div class="row about-content about-content--timeline">
-
-            <div class="col-full text-center">
-                <h1 style="margin-top:20px;">My Work Experience...</h1>
-            </div>
-
-            <div class="col-six tab-full left">
-                <div class="timeline">
-
-                    <div class="timeline__block">
-                        <div class="timeline__bullet"></div>
-                        <div class="timeline__header">
-                            <p class="timeline__timeframe">09/2021 - Present </p>
+            <div class="timeline reveal">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <span class="timeline-date">Sep 2021 &mdash; Present</span>
                             <h3>D2L</h3>
-                            <h5>Senior Software Developer</h5>
+                            <h4>Senior Software Developer</h4>
                         </div>
-                        <div class="timeline__desc">
-                          <p> •	Developed scalable full-stack features using Lit, React and C#, contributing to a cloud-based Learning Management System (LMS) serving millions of users.<br>
-                              •	Built reusable UI components with React and Lit, improving development efficiency and consistency across the platform.<br>
-                              •	Designed and implemented back-end services in C# to enhance activity management functionality and improve activity load performance by over 30%.<br>
-                              •	Improved team code review practices, increasing pull request feedback by 1.9x and review engagement (pushback) by 1.7x.
-                          </p>
+                        <ul class="timeline-details">
+                            <li>Developed scalable full-stack features using Lit, React and C#, contributing to a cloud-based Learning Management System (LMS) serving millions of users.</li>
+                            <li>Built reusable UI components with React and Lit, improving development efficiency and consistency across the platform.</li>
+                            <li>Designed and implemented back-end services in C# to enhance activity management functionality and improve activity load performance by over 30%.</li>
+                            <li>Improved team code review practices, increasing pull request feedback by 1.9x and review engagement by 1.7x.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <span class="timeline-date">Jan 2022 &mdash; Dec 2022</span>
+                            <h3>Home Standards Org</h3>
+                            <h4>Full Stack Web Developer (Volunteer)</h4>
                         </div>
-                    </div> <!-- end timeline__block -->
-                   
-                    <div class="timeline__block">
-                        <div class="timeline__bullet"></div>
-                        <div class="timeline__header">
-                            <p class="timeline__timeframe">09/2018 - 04/2021</p>
+                        <ul class="timeline-details">
+                            <li>Contributed to a non-profit platform that educates tenants on housing bylaw rights and violations.</li>
+                            <li>Built and maintained web application features using React, TypeScript, Express, and RESTful APIs.</li>
+                            <li>Integrated CMS functionality using Contentful and deployed services using DigitalOcean.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <span class="timeline-date">May 2020 &mdash; Sep 2020</span>
+                            <h3>Sapphir</h3>
+                            <h4>Full Stack Web Developer</h4>
+                        </div>
+                        <ul class="timeline-details">
+                            <li>Collaborated with a small team to design and develop a loan web application based on business requirements.</li>
+                            <li>Developed front-end and back-end features using HTML, CSS, JavaScript, Node.js, Express, and MongoDB.</li>
+                            <li>Integrated third-party financial APIs and implemented secure authentication using OAuth 2.0.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <span class="timeline-date">Sep 2018 &mdash; Apr 2021</span>
                             <h3>Queen's University</h3>
-                            <h5>Teaching Assistant</h5>
+                            <h4>Teaching Assistant</h4>
                         </div>
-                        <div class="timeline__desc">
-                            <p> •	Delivered instruction and mentorship in Java programming and software design.<br>
-                                •	Supported classroom activities, including tutoring, grading, and exam review.<br>
-                                •	Helped students strengthen problem-solving, algorithmic thinking, and programming fundamentals.
-                            </p>
+                        <ul class="timeline-details">
+                            <li>Delivered instruction and mentorship in Java programming and software design.</li>
+                            <li>Supported classroom activities, including tutoring, grading, and exam review.</li>
+                            <li>Helped students strengthen problem-solving, algorithmic thinking, and programming fundamentals.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Portfolio -->
+    <section id="portfolio" class="section section-light">
+        <div class="container">
+            <div class="section-header reveal">
+                <p class="section-label">Portfolio</p>
+                <h2 class="section-title">Selected Projects</h2>
+                <p class="section-subtitle">A collection of work I'm proud of. I'm constantly building, iterating, and refining.</p>
+            </div>
+
+            <div class="projects-grid">
+                <article class="project-card reveal">
+                    <div class="project-image">
+                        <img src="Images/portfolio/gallery/homeStandards.jpg" alt="Home Standards Org" loading="lazy">
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span>React</span><span>TypeScript</span><span>Express</span>
                         </div>
-                    </div> <!-- end timeline__block -->
-
-                </div> <!-- end timeline -->
-            </div> <!-- end left -->
-
-            <div class="col-six tab-full right">
-              <div class="timeline">
-
-                <div class="timeline__block">
-                    <div class="timeline__bullet"></div>
-                    <div class="timeline__header">
-                        <p class="timeline__timeframe">01/2022 - 12/2022</p>
                         <h3>Home Standards Org</h3>
-                        <h5>Full Stack Web Developer (Volunteer)</h5>
+                        <p>A non-profit web application that helps tenants identify when their landlord is in violation of property bylaws.</p>
+                        <div class="project-links">
+                            <a href="https://homestandards.org" target="_blank" rel="noopener noreferrer" class="project-link">
+                                Visit Site
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+                            </a>
+                        </div>
                     </div>
-                    <div class="timeline__desc">
-                      <p> •	Contributed to a non-profit platform that educates tenants on housing bylaw rights and violations.<br>
-                          •	Built and maintained web application features using React, TypeScript, Express, and RESTful APIs.<br>
-                          •	Integrated CMS functionality using Contentful and deployed services using DigitalOcean.
-                      </p>
+                </article>
+
+                <article class="project-card reveal">
+                    <div class="project-image">
+                        <img src="Images/portfolio/gallery/SapphirFull.jpg" alt="Sapphir" loading="lazy">
                     </div>
-                </div> <!-- end timeline__block -->
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span>Node.js</span><span>Express</span><span>MongoDB</span>
+                        </div>
+                        <h3>Sapphir</h3>
+                        <p>A loan web application developed in a small team with OAuth 2.0 authentication and third-party financial API integrations.</p>
+                        <div class="project-links">
+                            <a href="https://www.sapphir.ca/en" target="_blank" rel="noopener noreferrer" class="project-link">
+                                Visit Site
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
 
-                <div class="timeline__block">
-                  <div class="timeline__bullet"></div>
-                  <div class="timeline__header">
-                      <p class="timeline__timeframe">05/2020 - 09/2020 </p>
-                      <h3>Sapphir</h3>
-                      <h5>Full Stack Web Developer</h5>
-                  </div>
-                  <div class="timeline__desc">
-                    <p> •	Collaborated with a small team to design and develop a loan web application based on business requirements.<br>
-                        •	Developed front-end and back-end features using HTML, CSS, JavaScript, Node.js, Express, and MongoDB.<br>
-                        •	Integrated third-party financial APIs and implemented secure authentication using OAuth 2.0.
-                    </p>
-                  </div>
-                </div> <!-- end timeline__block -->
+                <article class="project-card reveal">
+                    <div class="project-image">
+                        <img src="Images/portfolio/gallery/hintle.png" alt="Hintle Game" loading="lazy">
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span>React</span><span>Vite</span><span>Express</span>
+                        </div>
+                        <h3>Hintle Game</h3>
+                        <p>A full-stack word-guessing game built with a React + Vite frontend and an Express REST API backend. A fun passion project.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/Mack6870/Hintle-Game" target="_blank" rel="noopener noreferrer" class="project-link">
+                                View Code
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
 
-                </div> <!-- end timeline -->
-            </div> <!-- end right -->
+                <article class="project-card reveal">
+                    <div class="project-image">
+                        <img src="Images/portfolio/gallery/NFK.png" alt="NanoFabrication Kingston" loading="lazy">
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span>Full-Stack</span><span>RFID</span><span>Access Control</span>
+                        </div>
+                        <h3>NanoFabrication Kingston</h3>
+                        <p>A lab management web application interfacing with an RFID system to control machine access and log usage in a nanofabrication laboratory.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/15ahl1/NFK_BadgeReader" target="_blank" rel="noopener noreferrer" class="project-link">
+                                View Code
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
 
-        </div> <!-- end about-content timeline -->
+                <article class="project-card reveal">
+                    <div class="project-image">
+                        <img src="Images/portfolio/gallery/FaceMerged.jpg" alt="Facial Recognition Extension" loading="lazy">
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span>Python</span><span>Chrome Extension</span><span>ML</span>
+                        </div>
+                        <h3>Facial Recognition Extension</h3>
+                        <p>A Chrome extension that secures a user's autofill data with facial recognition, adding a biometric layer of protection.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/Mack6870/Facial-Recognition-Chrome-Extension" target="_blank" rel="noopener noreferrer" class="project-link">
+                                View Code
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
 
-    </section> <!-- end about -->
-
-
-    <!-- works
-    ================================================== -->
-    <section style="padding-top:100px;" id="works" class="s-works target-section">
-
-        <div class="row narrow section-intro has-bottom-sep">
-            <div class="col-full">
-                <h3 style="font-size: 3rem; line-height: 1.3; margin-bottom: 2rem;">Portfolio</h3>
-                <h1>See Some Of My Projects...</h1>
-
-                <p class="lead">
-                  This is a small collection of some of my works. I am constantly improving and reiterating to ensure I am designing the best quality software.
-                </p>
+                <article class="project-card reveal">
+                    <div class="project-image">
+                        <img src="Images/portfolio/gallery/KinectMerged.jpg" alt="Kinect Website Creator" loading="lazy">
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span>C#</span><span>Kinect SDK</span><span>IR Camera</span>
+                        </div>
+                        <h3>Kinect Website Creator</h3>
+                        <p>A tool that enables users to build website layouts using physical blocks and the Kinect's IR camera for gesture-based interaction.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/Mack6870/Kinect-Website-Builder" target="_blank" rel="noopener noreferrer" class="project-link">
+                                View Code
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
             </div>
         </div>
+    </section>
 
-        <div class="row masonry-wrap">
-            <div class="masonry">
-
-                <!-- start masonry__brick -->
-                <div class="masonry__brick">
-                    <!-- start item-folio -->
-                      <div class="item-folio">
-  
-                          <div class="item-folio__thumb">
-                              <a href="Images/portfolio/gallery/homeStandards.jpg" class="thumb-link" title="Sapphir Screenshot" data-size="1900x2540">
-                                  <img src="Images/portfolio/gallery/homeStandards.jpg"
-                                       srcset="Images/portfolio/gallery/homeStandards.jpg 1x, Images/portfolio/gallery/homeStandards.jpg 2x" alt="">
-                                  <span class="shadow-overlay"></span>
-                              </a>
-                              <div class="item-folio__caption">
-                                  <p>I developed this web application for a non-profit. It allows tenants to identify when their landlord is in violation of property bylaws. You can see the site <a style="color: #1ecbe1;" href="https://homestandards.org" target="_blank">here</a>.</p>
-                              </div>
-                          </div>
-  
-                          <div class="item-folio__text">
-                              <h3 class="item-folio__title">
-                                  Home Standards Org
-                              </h3>
-                              <p class="item-folio__cat">
-                                  Full-Stack Web Developer
-                              </p>
-                          </div>
-  
-                          <a href="https://homestandards.org" target="_blank" class="item-folio__project-link" title="Project link">
-                              <i class="im im-link"></i>
-                          </a>
-  
-  
-  
-                      </div>
-                      <!-- end item-folio -->
-                  </div> <!-- end masonry__brick -->
-
-                <!-- start masonry__brick -->
-                <div class="masonry__brick">
-                  <!-- start item-folio -->
-                    <div class="item-folio">
-
-                        <div class="item-folio__thumb">
-                            <a href="Images/portfolio/gallery/SapphirFull.jpg" class="thumb-link" title="Sapphir Screenshot" data-size="1900x2540">
-                                <img src="Images/portfolio/gallery/SapphirFull.jpg"
-                                     srcset="Images/portfolio/gallery/SapphirFull.jpg 1x, Images/portfolio/gallery/SapphirFull.jpg 2x" alt="">
-                                <span class="shadow-overlay"></span>
-                            </a>
-                            <div class="item-folio__caption">
-                                <p>I developed this loan website in a small team of two. You can see the site <a style="color: #1ecbe1;" href="https://www.sapphir.ca/en" target="_blank">here</a>.</p>
-                            </div>
-                        </div>
-
-                        <div class="item-folio__text">
-                            <h3 class="item-folio__title">
-                                Sapphir
-                            </h3>
-                            <p class="item-folio__cat">
-                                Full-Stack Developer
-                            </p>
-                        </div>
-
-                        <a href="https://www.sapphir.ca/en" target="_blank" class="item-folio__project-link" title="Project link">
-                            <i class="im im-link"></i>
-                        </a>
-
-
-
-                    </div>
-                    <!-- end item-folio -->
-                </div> <!-- end masonry__brick -->
-
-                <!-- start masonry__brick -->
-                <div class="masonry__brick">
-                  <!-- start item-folio -->
-                    <div class="item-folio">
-
-                        <div class="item-folio__thumb">
-                            <a href="Images/portfolio/gallery/NFK.png" class="thumb-link" title="NFK Screenshot" data-size="936x596">
-                                <img src="Images/portfolio/gallery/NFK.png"
-                                     srcset="Images/portfolio/gallery/NFK.png 1x, Images/portfolio/gallery/NFK.png 2x" alt="">
-                                <span class="shadow-overlay"></span>
-                            </a>
-                            <div class="item-folio__caption">
-                                <p>I developed this lab management web application to interface with an RFID system to access control machines within a nano fabrication labratory and log machine use. You can check out the repository of the project <a style="color: #1ecbe1;" href="https://github.com/15ahl1/NFK_BadgeReader" target="_blank">here</a>.</p>
-                            </div>
-                        </div>
-
-                        <div class="item-folio__text">
-                            <h3 class="item-folio__title">
-                                NanoFabrication Kingston
-                            </h3>
-                            <p class="item-folio__cat">
-                                Full-Stack Developer
-                            </p>
-                        </div>
-
-                        <a href="https://github.com/15ahl1/NFK_BadgeReader" target="_blank" class="item-folio__project-link" title="Project link">
-                            <i class="im im-link"></i>
-                        </a>
-
-
-
-                    </div>
-                    <!-- end item-folio -->
-                </div> <!-- end masonry__brick -->
-
-                <!-- start masonry__brick -->
-                <div class="masonry__brick">
-                  <!-- start item-folio -->
-                    <div class="item-folio">
-
-                        <div class="item-folio__thumb">
-                            <a href="Images/portfolio/gallery/FaceMerged.jpg" class="thumb-link" title="Facial Detection Screenshot" data-size="776x981">
-                                <img src="Images/portfolio/gallery/FaceMerged.jpg"
-                                     srcset="Images/portfolio/gallery/FaceMerged.jpg 1x, Images/portfolio/gallery/FaceMerged.jpg 2x" alt="">
-                                <span class="shadow-overlay"></span>
-                            </a>
-                            <div class="item-folio__caption">
-                                <p>I developed this tool to secure a users autofill data within the Google Chrome application with their face. You can check out the condensed repository of the project <a style="color: #1ecbe1;" href="https://github.com/Mack6870/Facial-Recognition-Chrome-Extension" target="_blank">here</a>.</p>
-                            </div>
-                        </div>
-
-                        <div class="item-folio__text">
-                            <h3 class="item-folio__title">
-                                Facial Recognition Extension
-                            </h3>
-                            <p class="item-folio__cat">
-                                Full-Stack Developer
-                            </p>
-                        </div>
-
-                        <a href="https://github.com/Mack6870/Facial-Recognition-Chrome-Extension" target="_blank" class="item-folio__project-link" title="Project link">
-                            <i class="im im-link"></i>
-                        </a>
-
-
-
-                    </div>
-                    <!-- end item-folio -->
-                </div> <!-- end masonry__brick -->
-
-                <!-- start masonry__brick -->
-                <div class="masonry__brick">
-                  <!-- start item-folio -->
-                    <div class="item-folio">
-
-                        <div class="item-folio__thumb">
-                            <a href="Images/portfolio/gallery/KinectMerged.jpg" class="thumb-link" title="Kinect Screenshot" data-size="788x488">
-                                <img src="Images/portfolio/gallery/KinectMerged.jpg"
-                                     srcset="Images/portfolio/gallery/KinectMerged.jpg 1x, Images/portfolio/gallery/KinectMerged.jpg 2x" alt="">
-                                <span class="shadow-overlay"></span>
-                            </a>
-                            <div class="item-folio__caption">
-                                <p>I developed this tool to allow users to move blocks to build websites using the Kinect's IR camera. You can check out the repository of the project <a style="color: #1ecbe1;" href="https://github.com/Mack6870/Kinect-Website-Builder" target="_blank">here</a>.</p>
-                            </div>
-                        </div>
-
-                        <div class="item-folio__text">
-                            <h3 class="item-folio__title">
-                                Kinect Website Creator
-                            </h3>
-                            <p class="item-folio__cat">
-                                Software Developer
-                            </p>
-                        </div>
-
-                        <a href="https://github.com/Mack6870/Kinect-Website-Builder" target="_blank" class="item-folio__project-link" title="Project link">
-                            <i class="im im-link"></i>
-                        </a>
-
-
-
-                    </div>
-                    <!-- end item-folio -->
-                </div> <!-- end masonry__brick -->
-
-
+    <!-- Contact -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="section-header reveal">
+                <p class="section-label">Contact</p>
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Have a question or want to work together? Drop me a message and I'll get back to you as soon as possible.</p>
             </div>
-        </div> <!-- end masonry -->
 
-    </section> <!-- end works -->
+            <div class="contact-grid reveal">
+                <form class="contact-form" id="contactForm" action="https://formsubmit.co/mackenziefurlong@hotmail.com" method="POST" autocomplete="on">
+                    <input type="hidden" name="_subject" value="Contact Form Submission">
+                    <input type="hidden" name="_template" value="box">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_autoresponse" value="Thank you for reaching out! This is an automated response confirming I have received your email and will reply soon.&#13;&#10;&#13;&#10;Best,&#13;&#10;Mackenzie Furlong">
+                    <input type="hidden" name="_next" value="https://mack6870.github.io/Personal-Website/thanks.html">
+                    <input type="text" name="_honey" style="display:none">
 
-    <!-- start s-contact -->
-    <section style="padding-top:100px;" id="contact" class="s-contact target-section" data-natural-width=3893 data-natural-height=2494 data-position-y=center>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="contactName">Name</label>
+                            <input name="name" type="text" id="contactName" placeholder="Your name" minlength="2" required aria-required="true">
+                        </div>
+                        <div class="form-group">
+                            <label for="contactEmail">Email</label>
+                            <input type="email" name="email" id="contactEmail" placeholder="you@example.com" required aria-required="true">
+                        </div>
+                    </div>
 
-        <div class="overlay"></div>
+                    <div class="form-group">
+                        <label for="contactSubject">Subject</label>
+                        <input name="subject" type="text" id="contactSubject" placeholder="What's this about?" required>
+                    </div>
 
-        <div class="row narrow section-intro">
-            <div class="col-full">
-                <h3 style="font-size: 3rem; line-height: 1.3; margin-bottom: 5rem;">Contact</h3>
-                <h1>Get In Touch</h1>
+                    <div class="form-group">
+                        <label for="contactMessage">Message</label>
+                        <textarea name="message" id="contactMessage" placeholder="Your message..." rows="6" required aria-required="true"></textarea>
+                    </div>
 
-                <p class="lead">Should you wish to contact me, leave me a message, and I will get back to you as soon as possible.</p>
-            </div>
-        </div>
-
-        <div class="row contact__main">
-            <div class="col-eight tab-full contact__form">
-                <!-- <form action="https://formspree.io/f/moqywogn" method="POST" autocomplete="on">  -->
-                <form id="contactForm" action="https://formsubmit.co/mackenziefurlong@hotmail.com" method="POST" autocomplete="on">
-                    <fieldset>
-                      <input type="hidden" name="_subject" id="email-subject" value="Contact Form Submission">
-                      <input type="hidden" name="_template" value="box">
-                      <input type="hidden" name="_captcha" value="false">
-                      <input type="hidden" name="_autoresponse" value="Thank you for reaching out! This is an automated response confirming I have received your email and will reply soon.&#13;&#10;&#13;&#10;Best,&#13;&#10;Mackenzie Furlong">
-                      <input type="hidden" name="_next" value="https://mack6870.github.io/Personal-Website/thanks.html">
-                      <div class="form-field">
-                        <input type="text" name="_honey" style="display:none">
-                      </div>
-                      <div class="form-field">
-                          <input name="name" type="text" id="contactName" placeholder="Name" value="" minlength="2" required="" aria-required="true" class="full-width">
-                      </div>
-                      <div class="form-field">
-                          <input type="email" name="email" id="contactEmail" placeholder="Your Email" value="" required="" aria-required="true" class="full-width">
-                      </div>
-                      <div class="form-field">
-                          <input name="subject" type="text" id="contactSubject" placeholder="Subject" value="" required="" class="full-width">
-                      </div>
-                      <div class="form-field">
-                          <textarea style="margin-bottom:0px;" name="message" id="contactMessage" placeholder="Message" rows="6" cols="50" required="" aria-required="true" class="full-width"></textarea>
-                      </div>
-                      <div class="form-field">
-                          <button style="margin-top:15px;" type="submit" value="Submit" class="full-width btn--primary">Submit</button>
-                          <div class="submit-loader">
-                              <div class="text-loader">Sending...</div>
-                              <div class="s-loader">
-                                  <div class="bounce1"></div>
-                                  <div class="bounce2"></div>
-                                  <div class="bounce3"></div>
-                              </div>
-                          </div>
-                      </div>
-                    </fieldset>
-
+                    <button type="submit" class="btn btn-primary">
+                        Send Message
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+                    </button>
                 </form>
 
-                <!-- contact-warning -->
-                <!-- <div class="message-warning">
-                    Something went wrong. Please try again.
-                </div> -->
-
-                <!-- contact-success -->
-                <!-- <div class="message-success">
-                    Your message was sent, thank you!<br>
-                </div> -->
-
-            </div>
-            <div class="col-four tab-full contact__infos">
-                <h4 class="h06">Phone:</h4>
-                <p>
-                  <script>
-                    var phnStart = '(28' + '9) ' + '38' + '3';
-                    var phnEnd = '-' + '4' + '2' + '5' + '5';
-                    document.write(phnStart);
-                    document.write(phnEnd);
-                  </script>
-                </p>
-
-                <h4 class="h06">Email:</h4>
-                <p>
-                  <script>
-                    var emlName = 'macke' + 'nzief' + 'urlo' + 'ng@';
-                    var emlDomain = 'ho' + 'tm' + 'ail' + '.c' +'om';
-                    document.write(emlName);
-                    document.write(emlDomain);
-                  </script>
-                </p>
-
-            </div>
-
-        </div>
-
-    </section> <!-- end s-contact -->
-
-
-    <!-- footer
-    ================================================== -->
-    <footer style="padding-top:45px;">
-        <div class="row">
-            <div class="col-full">
-
-                <div class="footer-logo">
-                    <a class="footer-site-logo smoothscroll" href="#home"><img src="Images/M-Logo-White.png" alt="Homepage"></a>
-                </div>
-
-                <ul class="footer-social">
-                    <li><a href="https://www.linkedin.com/in/mackenzie-furlong/" target="_blank">
-                        <i class="im im-linkedin" aria-hidden="true"></i>
-                        <span>LinkedIn</span>
-                    </a></li>
-                    <li><a href="https://github.com/Mack6870" target="_blank">
-                        <i class="im im-github" aria-hidden="true"></i>
-                        <span>GitHub</span>
-                    </a></li>
-                </ul>
-
-            </div>
-        </div>
-
-        <div class="row footer-bottom" style="margin-top:0px;">
-
-            <div class="col-twelve">
-                <div class="copyright">
-                    <span>© Copyright Mackenzie Furlong 2026</span>
-                </div>
-
-                <div class="go-top">
-                <a class="smoothscroll" title="Back to Top" href="#top"><i class="im im-arrow-up" aria-hidden="true"></i></a>
-                </div>
-            </div>
-
-        </div> <!-- end footer-bottom -->
-
-    </footer> <!-- end footer -->
-
-
-    <!-- photoswipe background
-    ================================================== -->
-    <div aria-hidden="true" class="pswp" role="dialog" tabindex="-1">
-
-        <div class="pswp__bg"></div>
-        <div class="pswp__scroll-wrap">
-
-            <div class="pswp__container">
-                <div class="pswp__item"></div>
-                <div class="pswp__item"></div>
-                <div class="pswp__item"></div>
-            </div>
-
-            <div class="pswp__ui pswp__ui--hidden">
-                <div class="pswp__top-bar">
-                    <div class="pswp__counter"></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button> <button class="pswp__button pswp__button--share" title=
-                    "Share"></button> <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button> <button class="pswp__button pswp__button--zoom" title=
-                    "Zoom in/out"></button>
-                    <div class="pswp__preloader">
-                        <div class="pswp__preloader__icn">
-                            <div class="pswp__preloader__cut">
-                                <div class="pswp__preloader__donut"></div>
-                            </div>
+                <aside class="contact-aside">
+                    <div class="contact-card">
+                        <h3>Let's connect</h3>
+                        <p>I'm always interested in new opportunities, collaborations, or just a good conversation about tech.</p>
+                        <div class="contact-socials">
+                            <a href="https://www.linkedin.com/in/mackenzie-furlong/" target="_blank" rel="noopener noreferrer" class="social-link">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                                LinkedIn
+                            </a>
+                            <a href="https://github.com/Mack6870" target="_blank" rel="noopener noreferrer" class="social-link">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                                GitHub
+                            </a>
                         </div>
                     </div>
-                </div>
-                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                    <div class="pswp__share-tooltip"></div>
-                </div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button> <button class="pswp__button pswp__button--arrow--right" title=
-                "Next (arrow right)"></button>
-                <div class="pswp__caption">
-                    <div class="pswp__caption__center"></div>
-                </div>
+                </aside>
             </div>
-
         </div>
-
-    </div><!-- end photoSwipe background -->
-
-    <div id="preloader">
-        <div id="loader"></div>
-    </div>
+    </section>
 
 
-    <!-- Java Script
-    ================================================== -->
-    <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="js/plugins.js"></script>
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-inner">
+                <a href="#top">
+                    <img src="Images/M-Logo-White.png" alt="MF" class="footer-logo-img">
+                </a>
+                <p class="footer-copy">&copy; 2026 Mackenzie Furlong</p>
+                <a href="#top" class="back-to-top" aria-label="Back to top">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
     <script src="js/main.js"></script>
-
 </body>
 
 </html>

@@ -1,424 +1,132 @@
-/* ===================================================================
- * Hola - Main JS
- *
- * ------------------------------------------------------------------- */
-
-(function($) {
-
-    "use strict";
-
-    var cfg = {
-        scrollDuration : 800, // smoothscroll duration
-        mailChimpURL   : ''   // mailchimp url
-    },
-
-    $WIN = $(window);
-
-    // Add the User Agent to the <html>
-    // will be used for IE10 detection (Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0))
-    var doc = document.documentElement;
-    doc.setAttribute('data-useragent', navigator.userAgent);
-
-
-    /* Preloader
-     * -------------------------------------------------- */
-    var ssPreloader = function() {
-
-        $("html").addClass('ss-preload');
-
-        $WIN.on('load', function() {
-
-            // force page scroll position to top at page refresh
-            // $('html, body').animate({ scrollTop: 0 }, 'normal');
-
-            // will first fade out the loading animation
-            $("#loader").fadeOut("slow", function() {
-                // will fade out the whole DIV that covers the website.
-                $("#preloader").delay(300).fadeOut("slow");
-            });
-
-            // for hero content animations
-            $("html").removeClass('ss-preload');
-            $("html").addClass('ss-loaded');
-
-        });
-    };
-
-
-    /* pretty print
-     * -------------------------------------------------- */
-    var ssPrettyPrint = function() {
-        $('pre').addClass('prettyprint');
-        $( document ).ready(function() {
-            prettyPrint();
-        });
-    };
-
-
-    /* Move header
-     * -------------------------------------------------- */
-    var ssMoveHeader = function () {
-
-        var hero = $('.page-hero'),
-            hdr = $('header'),
-            triggerHeight = hero.outerHeight() - 170;
-
-
-        $WIN.on('scroll', function () {
-
-            var loc = $WIN.scrollTop();
-
-            if (loc > triggerHeight) {
-                hdr.addClass('sticky');
-            } else {
-                hdr.removeClass('sticky');
-            }
-
-            if (loc > triggerHeight + 20) {
-                hdr.addClass('offset');
-            } else {
-                hdr.removeClass('offset');
-            }
-
-            if (loc > triggerHeight + 150) {
-                hdr.addClass('scrolling');
-            } else {
-                hdr.removeClass('scrolling');
-            }
-
-        });
-
-        // $WIN.on('resize', function() {
-        //     if ($WIN.width() <= 768) {
-        //             hdr.removeClass('sticky offset scrolling');
-        //     }
-        // });
-
-    };
-
-
-    /* Mobile Menu
-     * ---------------------------------------------------- */
-    var ssMobileMenu = function() {
-
-        var toggleButton = $('.header-menu-toggle'),
-            nav = $('.header-nav-wrap');
-
-        toggleButton.on('click', function(event){
-            event.preventDefault();
-
-            toggleButton.toggleClass('is-clicked');
-            nav.slideToggle();
-        });
-
-        if (toggleButton.is(':visible')) nav.addClass('mobile');
-
-        $WIN.on('resize', function() {
-            if (toggleButton.is(':visible')) nav.addClass('mobile');
-            else nav.removeClass('mobile');
-        });
-
-        nav.find('a').on("click", function() {
-
-            if (nav.hasClass('mobile')) {
-                toggleButton.toggleClass('is-clicked');
-                nav.slideToggle();
-            }
-        });
-
-    };
-
-
-    /* Masonry
-     * ---------------------------------------------------- */
-    var ssMasonryFolio = function () {
-
-        var containerBricks = $('.masonry');
-
-        containerBricks.imagesLoaded(function () {
-            containerBricks.masonry({
-                itemSelector: '.masonry__brick',
-                resize: true
-            });
-        });
-    };
-
-
-    /* photoswipe
-     * ----------------------------------------------------- */
-    var ssPhotoswipe = function() {
-        var items = [],
-            $pswp = $('.pswp')[0],
-            $folioItems = $('.item-folio__thumb');
-
-            // get items
-            $folioItems.each( function(i) {
-
-                var $folio = $(this),
-                    $thumbLink =  $folio.find('.thumb-link'),
-                    $title = $folio.find('.item-folio__title'),
-                    $caption = $folio.find('.item-folio__caption'),
-                    $titleText = '<h4>' + $.trim($title.html()) + '</h4>',
-                    $captionText = $.trim($caption.html()),
-                    $href = $thumbLink.attr('href'),
-                    $size = $thumbLink.data('size').split('x'),
-                    $width  = $size[0],
-                    $height = $size[1];
-
-                var item = {
-                    src  : $href,
-                    w    : $width,
-                    h    : $height
-                }
-
-                if ($caption.length > 0) {
-                    item.title = $.trim($titleText + $captionText);
-                }
-
-                items.push(item);
-            });
-
-            // bind click event
-            $folioItems.each(function(i) {
-
-                $(this).on('click', function(e) {
-                    e.preventDefault();
-                    var options = {
-                        index: i,
-                        showHideOpacity: true
-                    }
-
-                    // initialize PhotoSwipe
-                    var lightBox = new PhotoSwipe($pswp, PhotoSwipeUI_Default, items, options);
-                    lightBox.init();
-                });
-
-            });
-
-    };
-
-
-    /* slick slider
-     * ------------------------------------------------------ */
-    var ssSlickSlider = function() {
-
-        $('.testimonials__slider').slick({
-            arrows: true,
-            dots: false,
-            infinite: true,
-            slidesToShow: 2,
-            slidesToScroll: 1,
-            prevArrow: "<div class=\'slick-prev\'><i class=\'im im-arrow-left\' aria-hidden=\'true\'></i></div>",
-            nextArrow: "<div class=\'slick-next\'><i class=\'im im-arrow-right\' aria-hidden=\'true\'></i></div>",
-            pauseOnFocus: false,
-            autoplaySpeed: 1500,
-            responsive: [
-                {
-                    breakpoint: 900,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1
-                    }
-                }
-            ]
-        });
-
-    };
-
-
-    /* Highlight the current section in the navigation bar
-     * ------------------------------------------------------ */
-    var ssWaypoints = function() {
-
-        var sections = $(".target-section"),
-            navigation_links = $(".header-nav li a");
-
-        sections.waypoint( {
-
-            handler: function(direction) {
-
-                var active_section;
-
-                active_section = $('section#' + this.element.id);
-
-                if (direction === "up") active_section = active_section.prevAll(".target-section").first();
-
-                var active_link = $('.header-nav li a[href="#' + active_section.attr("id") + '"]');
-
-                navigation_links.parent().removeClass("current");
-                active_link.parent().addClass("current");
-
-            },
-
-            offset: '25%'
-
-        });
-
-    };
-
-
-   /* Stat Counter
-    * ------------------------------------------------------ */
-    var ssStatCount = function() {
-
-        var statSection = $(".s-stats"),
-        stats = $(".stats__count");
-
-        statSection.waypoint({
-
-            handler: function(direction) {
-
-                if (direction === "down") {
-
-                    stats.each(function () {
-                        var $this = $(this);
-
-                        $({ Counter: 0 }).animate({ Counter: $this.text() }, {
-                            duration: 4000,
-                            easing: 'swing',
-                            step: function (curValue) {
-                                $this.text(Math.ceil(curValue));
-                            }
-                        });
-                    });
-
-                }
-
-                // trigger once only
-                this.destroy();
-
-            },
-
-            offset: "90%"
-
-        });
-    };
-
-
-   /* Smooth Scrolling
-    * ------------------------------------------------------ */
-    var ssSmoothScroll = function() {
-
-        $('.smoothscroll').on('click', function (e) {
-            var target = this.hash,
-            $target    = $(target);
+/* =================================================================
+ * Mackenzie Furlong — Personal Website
+ * Main JavaScript (Vanilla ES6+, no jQuery)
+ * ================================================================= */
+
+(function () {
+    'use strict';
+
+    /* ---------------------------------------------------------
+     * Smooth Scroll for anchor links
+     * --------------------------------------------------------- */
+    document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+        anchor.addEventListener('click', function (e) {
+            var targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+
+            var target = document.querySelector(targetId);
+            if (!target) return;
 
             e.preventDefault();
-            e.stopPropagation();
 
-            $('html, body').stop().animate({
-                'scrollTop': $target.offset().top
-            }, cfg.scrollDuration, 'swing', function () {
-                window.location.hash = target;
+            var headerOffset = 72;
+            var elementPosition = target.getBoundingClientRect().top + window.pageYOffset;
+            var offsetPosition = elementPosition - headerOffset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
             });
 
-        });
-    };
-
-
-    /* Placeholder Plugin Settings
-     * ------------------------------------------------------ */
-    var ssPlaceholder = function() {
-        $('input, textarea, select').placeholder();
-    };
-
-
-    /* Alert Boxes
-     * ------------------------------------------------------ */
-    var ssAlertBoxes = function() {
-
-        $('.alert-box').on('click', '.alert-box__close', function() {
-            $(this).parent().fadeOut(500);
-        });
-
-    };
-
-
-    /* Contact Form
-     * ------------------------------------------------------ */
-    var ssContactForm = function() {
-
-        /* local validation */
-	    $('#contactForm').validate({
-            rules: {
-                name: {
-                    required: true,
-                    minlength: 2
-                },
-                email: {
-                    required: true,
-                    email: true
-                },
-                subject: {
-                    required: true
-                },
-                message: {
-                    required: true,
-                    minlength: 15
-                }
-            },
-            messages: {
-                name: {
-                    required: "Please enter your name.",
-                    minlength: "Please enter your name."
-                },
-                email: {
-                    required: "Please enter a valid email address.",
-                    email: "Please enter a valid email address."
-                },
-                subject: {
-                    required: "Please enter a subject."
-                },
-                message: {
-                    required: "Please enter your message.",
-                    minlength: "Please enter your message (at least 15 characters)."
-                }
+            // Close mobile menu if open
+            var nav = document.getElementById('headerNav');
+            var toggle = document.getElementById('mobileToggle');
+            if (nav && nav.classList.contains('is-open')) {
+                nav.classList.remove('is-open');
+                toggle.classList.remove('is-active');
+                document.body.style.overflow = '';
             }
         });
-    };
+    });
 
 
-   /* Back to Top
-    * ------------------------------------------------------ */
-    var ssBackToTop = function() {
+    /* ---------------------------------------------------------
+     * Mobile Menu Toggle
+     * --------------------------------------------------------- */
+    var mobileToggle = document.getElementById('mobileToggle');
+    var headerNav = document.getElementById('headerNav');
 
-        var pxShow  = 500,   // height on which the button will show
-        fadeInTime  = 400,   // how slow/fast you want the button to show
-        fadeOutTime = 400,   // how slow/fast you want the button to hide
-        scrollSpeed = 300,   // how slow/fast you want the button to scroll to top. can be a value, 'slow', 'normal' or 'fast'
-        goTopButton = $(".go-top")
+    if (mobileToggle && headerNav) {
+        mobileToggle.addEventListener('click', function () {
+            this.classList.toggle('is-active');
+            headerNav.classList.toggle('is-open');
+            document.body.style.overflow = headerNav.classList.contains('is-open') ? 'hidden' : '';
+        });
+    }
 
-        // Show or hide the sticky footer button
-        $(window).on('scroll', function() {
-            if ($(window).scrollTop() >= pxShow) {
-                goTopButton.fadeIn(fadeInTime);
-            } else {
-                goTopButton.fadeOut(fadeOutTime);
+
+    /* ---------------------------------------------------------
+     * Active Nav Link on Scroll
+     * --------------------------------------------------------- */
+    var sections = document.querySelectorAll('section[id]');
+    var navLinks = document.querySelectorAll('.nav-link');
+
+    function updateActiveNav() {
+        var scrollPos = window.pageYOffset + 150;
+
+        sections.forEach(function (section) {
+            var top = section.offsetTop;
+            var height = section.offsetHeight;
+            var id = section.getAttribute('id');
+
+            if (scrollPos >= top && scrollPos < top + height) {
+                navLinks.forEach(function (link) {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + id) {
+                        link.classList.add('active');
+                    }
+                });
             }
         });
-    };
+    }
+
+    window.addEventListener('scroll', updateActiveNav, { passive: true });
+    updateActiveNav();
 
 
-   /* Initialize
-    * ------------------------------------------------------ */
-    (function ssInit() {
+    /* ---------------------------------------------------------
+     * Scroll Reveal (Intersection Observer)
+     * --------------------------------------------------------- */
+    var reveals = document.querySelectorAll('.reveal');
 
-        ssPreloader();
-        ssPrettyPrint();
-        ssMoveHeader();
-        ssMobileMenu();
-        ssMasonryFolio();
-        ssPhotoswipe();
-        ssSlickSlider();
-        ssWaypoints();
-        ssStatCount();
-        ssSmoothScroll();
-        ssPlaceholder();
-        ssAlertBoxes();
-        ssContactForm();
-        ssBackToTop();
+    if ('IntersectionObserver' in window) {
+        var revealObserver = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -40px 0px'
+        });
 
-    })();
+        reveals.forEach(function (el) {
+            revealObserver.observe(el);
+        });
+    } else {
+        // Fallback: just show everything
+        reveals.forEach(function (el) {
+            el.classList.add('is-visible');
+        });
+    }
 
 
-})(jQuery);
+    /* ---------------------------------------------------------
+     * Header background on scroll
+     * --------------------------------------------------------- */
+    var header = document.getElementById('header');
+
+    function updateHeader() {
+        if (window.pageYOffset > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    }
+
+    window.addEventListener('scroll', updateHeader, { passive: true });
+    updateHeader();
+
+})();
