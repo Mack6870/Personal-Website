@@ -31,9 +31,13 @@
             // Close mobile menu if open
             var nav = document.getElementById('headerNav');
             var toggle = document.getElementById('mobileToggle');
+            var header = document.getElementById('header');
             if (nav && nav.classList.contains('is-open')) {
                 nav.classList.remove('is-open');
                 toggle.classList.remove('is-active');
+                if (header) {
+                    header.classList.remove('nav-open');
+                }
                 document.body.style.overflow = '';
             }
         });
@@ -45,11 +49,15 @@
      * --------------------------------------------------------- */
     var mobileToggle = document.getElementById('mobileToggle');
     var headerNav = document.getElementById('headerNav');
+    var siteHeader = document.getElementById('header');
 
     if (mobileToggle && headerNav) {
         mobileToggle.addEventListener('click', function () {
             this.classList.toggle('is-active');
             headerNav.classList.toggle('is-open');
+            if (siteHeader) {
+                siteHeader.classList.toggle('nav-open');
+            }
             document.body.style.overflow = headerNav.classList.contains('is-open') ? 'hidden' : '';
         });
     }
